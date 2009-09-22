@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-18 17:51+0200\n"
+"POT-Creation-Date: 2009-09-22 15:49+0200\n"
 "PO-Revision-Date: 2009-09-22 09:51\n"
 "Last-Translator: <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,8 +29,12 @@ msgid "Description"
 msgstr "Descrição"
 
 #: models.py:11 models.py:40
-msgid "This is the description of the menu item. It may be shown when you hover a menu item."
-msgstr "Esta é a descrição do ítem de menu. Ela pode ser mostrada quando você passa o mouse por cima do ítem."
+msgid ""
+"This is the description of the menu item. It may be shown when you hover a "
+"menu item."
+msgstr ""
+"Esta é a descrição do ítem de menu. Ela pode ser mostrada quando você passa "
+"o mouse por cima do ítem."
 
 #: models.py:12
 msgid "URL"
@@ -41,8 +45,14 @@ msgid "The URL this menu item links to."
 msgstr "A URL do ítem de menu."
 
 #: models.py:13
-msgid "If you would like that this item comes under another one, select it here. Please note that the appearence of this item will then get conditioned to the appearence parent item as well."
-msgstr "Se você deseja que este ítem esteja sob um outro ítem, selecione o ítem pai aqui. Note que o aparecimento deste ítem ficará condicionada ao aparecimento do item pai."
+msgid ""
+"If you would like that this item comes under another one, select it here. "
+"Please note that the appearence of this item will then get conditioned to "
+"the appearence parent item as well."
+msgstr ""
+"Se você deseja que este ítem esteja sob um outro ítem, selecione o ítem pai "
+"aqui. Note que o aparecimento deste ítem ficará condicionada ao aparecimento "
+"do item pai."
 
 #: models.py:14 models.py:37
 msgid "Language"
