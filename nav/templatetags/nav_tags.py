@@ -9,7 +9,7 @@
 from django.template import Template, Context
 from django import template
 register = template.Library()
-from djanmenus.models import get_translation
+from nav.models import get_translation
 
 @register.simple_tag
 def item_trans(item, variable, language):

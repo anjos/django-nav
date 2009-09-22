@@ -10,13 +10,13 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name = "djanmenus",
+    name = "nav",
     version = "0.1", 
     packages = find_packages(),
 
     # we also need all translation files and templates
     package_data = {
-      'djanmenus': [
+      'nav': [
         'locale/*/LC_MESSAGES/django.po',
         'locale/*/LC_MESSAGES/django.mo',
         ],

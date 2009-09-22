@@ -6,7 +6,7 @@ MAKE_MESSAGE=sw/django-admin.py makemessages --all --extension=html,py,txt
 COMPILE_MESSAGE=sw/django-admin.py compilemessages
 LANGUAGES=en pt_BR fr es
 PYTHON=python2.5
-PROJECT=djanmenus
+PROJECT=nav
 
 .PHONY: test clean 
 
@@ -37,7 +37,7 @@ remove_django:
 languages: install_django strings compile
 
 update_languages:
-	@for l in $(LANGUAGES); do cp test/sw/djanmenus*/djanmenus/locale/$$l/LC_MESSAGES/django.po djanmenus/locale/$$l/LC_MESSAGES/; done
+	@for l in $(LANGUAGES); do cp test/sw/nav*/nav/locale/$$l/LC_MESSAGES/django.po nav/locale/$$l/LC_MESSAGES/; done
 
 test: 
 	@cd test && ./run.sh

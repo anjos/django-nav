@@ -16,7 +16,7 @@ INSTALLDIR=${BASEDIR}/sw
 setuptools_egg=setuptools-0.6c9-py${python_version}.egg
 setuptools=http://pypi.python.org/packages/${python_version}/s/setuptools/${setuptools_egg};
 rosetta=http://django-rosetta.googlecode.com/files/django-rosetta-0.4.5.svn.tar.gz
-djanmenus=..
+nav=..
 
 # This script will download and install all necessary software for us
 [ -r sw ] && rm -f sw;
@@ -49,5 +49,5 @@ function install () {
   echo "### Installation of $package is done!"
 }
 
-install djanmenus ${djanmenus}
+install nav ${nav}
 install rosetta ${rosetta}

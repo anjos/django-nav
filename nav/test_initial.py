@@ -9,7 +9,7 @@
 import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'project.settings'
 
-from djanmenus.models import *
+from nav.models import *
 
 names = ['First', 'Second', 'Third', 'Fourth']
 urls = ['{% url rosetta-home %}', '{% url root %}', '{% url admin "" %}', '/']

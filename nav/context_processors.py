@@ -6,7 +6,7 @@
 """Context processors for standard things on every template rendering
 """
 
-from djanmenus.models import Item
+from nav.models import Item
 
 def navigation(request):
   return {'navigation': Item.objects.filter(parent=None)} 

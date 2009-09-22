@@ -4,7 +4,7 @@
 # Ter 17 Mar 2009 14:54:20 CET 
 
 from django.contrib import admin
-from djanmenus.models import * 
+from nav.models import * 
 
 def translations(item):
   return item.itemtranslation_set.count()

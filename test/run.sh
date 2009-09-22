@@ -24,7 +24,7 @@ if [ ! -d project ]; then
   cd ${start_dir};
 
   # and prepare the database for a manual inspection
-  ${PYTHON} sw/djanmenus*/djanmenus/test_initial.py
+  ${PYTHON} sw/nav*/nav/test_initial.py
 fi
 
 if [ ! -d media ]; then
@@ -36,14 +36,14 @@ if [ ! -d media ]; then
 fi
 
 # update the translation strings
-cd sw/djanmenus*/djanmenus;
+cd sw/nav*/nav;
 django-admin.py compilemessages
 cd ${start_dir};
 
 # now run all tests
 cd project;
 ${PYTHON} -m compileall .
-${PYTHON} manage.py test djanmenus;
+${PYTHON} manage.py test nav;
 # and let the webserver running
 ${PYTHON} manage.py runserver 8080;
 cd ${start_dir};
