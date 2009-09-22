@@ -63,7 +63,7 @@ msgstr "éléments de menu"
 #: models.py:30
 #, python-format
 msgid "Menu item \"%(name)s\", %(description)s (depth %(depth)d)"
-msgstr "Élément de menu \"%(name)s\", %(description)s (profondeur (%depth)d)"
+msgstr "Élément de menu \"%(name)s\", %(description)s (profondeur %(depth)d)"
 
 #: models.py:32
 #, python-format
