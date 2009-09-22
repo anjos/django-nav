@@ -4,3 +4,5 @@ sw*
 test/sw*
 test/media
 test/project
+build/
+*.egg-info/
