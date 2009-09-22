@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-18 17:51+0200\n"
+"PO-Revision-Date: 2009-09-22 09:55\n"
+"Last-Translator: <andre.dos.anjos@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.4.5.svn\n"
+
+#: models.py:9 models.py:38
+msgid "Name"
+msgstr "Nom"
+
+#: models.py:10 models.py:39
+msgid "The name of the menu item. That is what will be displayed."
+msgstr "Le nom de l'élément de menu. C'est ça que sera affiché."
+
+#: models.py:11 models.py:40
+msgid "Description"
+msgstr "Description"
+
+#: models.py:11 models.py:40
+msgid "This is the description of the menu item. It may be shown when you hover a menu item."
+msgstr "Ceci est la description de l'élément de menu. Elle peut être affiché lorsque vous passez le souris sur un élément de menu."
+
+#: models.py:12
+msgid "URL"
+msgstr "URL"
+
+#: models.py:12
+msgid "The URL this menu item links to."
+msgstr "L'URL de cet élément de menu."
+
+#: models.py:13
+msgid "If you would like that this item comes under another one, select it here. Please note that the appearence of this item will then get conditioned to the appearence parent item as well."
+msgstr "Si vous souhaitez que cet élément sois en dessous d'un autre, le sélectionner ici. S'il vous plaît noter que l'affichage de cet élément sera alors conditionnée à l'élément parent."
+
+#: models.py:14 models.py:37
+msgid "Language"
+msgstr "Langue"
+
+#: models.py:14
+msgid "Choose the language to which the name applies to."
+msgstr "Choisissez la langue à laquelle le nom s'applique."
+
+#: models.py:17
+msgid "menu item"
+msgstr "élément de menu"
+
+#: models.py:18
+msgid "menu items"
+msgstr "éléments de menu"
+
+#: models.py:30
+#, python-format
+msgid "Menu item \"%(name)s\", %(description)s (depth %(depth)d)"
+msgstr "Élément de menu \"%(name)s\", %(description)s (profondeur (%depth)d)"
+
+#: models.py:32
+#, python-format
+msgid "Menu item \"%(name)s\" (depth %(depth)d)"
+msgstr "Élément de menu \"%(name)s\" (profondeur %(depth)d)"
+
+#: models.py:37
+msgid "Choose the language to which this variant applies to."
+msgstr "Choisissez la langue à laquelle s'applique cette variante."
+
+#: models.py:43
+msgid "menu item translation"
+msgstr "traduction d'élément de menu"
+
+#: models.py:44
+msgid "menu item translations"
+msgstr "traductions d'élément de menu"

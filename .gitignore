@@ -1,0 +1,6 @@
+*~
+*.pyc
+sw*
+test/sw*
+test/media
+test/project

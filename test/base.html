@@ -1,0 +1,27 @@
+{% load i18n djanmenus_tags %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>{% block title %} NO TITLE? {% endblock %}</title>
+    {% block media %}<!-- No media extensions provided -->{% endblock %}
+  </head>
+
+  <body>
+
+    <div id="menu">
+      {% block menu %}
+      <ul>
+        {% for item in navigation %}
+        <li><a href="{% render_template item.url %}" title="{% item_trans item "description" LANGUAGE_CODE %}">{% item_trans item "name" LANGUAGE_CODE %}</a></li>
+        {% endfor %}
+      </ul>
+      {% endblock %}
+    </div>
+
+    {% block content %}<p>Hello, there is no content provided?</p>{% endblock %}
+
+    <div class="footer">
+     <hr /><p>{% trans "Automatically generated at " %}{% now "r" %}</p>
+    </div>
+
+ </body>
+</html>
