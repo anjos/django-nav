@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 setup(
 
     name = "nav",
-    version = "0.1", 
+    version = "0.1.1", 
     packages = find_packages(),
 
     # we also need all translation files and templates
@@ -27,7 +27,6 @@ setup(
     install_requires = [
       'Django>=1.1',
       'docutils',
-      'setuptools',
       ],
 
     dependency_links = [
