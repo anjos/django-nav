@@ -4,6 +4,7 @@
 # Ter 17 Mar 2009 14:54:20 CET 
 
 from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 from nav.models import * 
 
 def translations(item):
@@ -13,6 +14,19 @@ class ItemAdmin(admin.ModelAdmin):
   model = Item 
   list_display = ('name', 'url', 'parent', 'description', 'language',
       translations, )
+  fieldsets = (
+      (None, 
+        {
+          'fields': ('name', 'url', 'parent', 'description', 'language'),
+        }
+      ),
+      (_(u'Permissions'), 
+        {
+          'classes': ('collapse',),
+          'fields': ('staff', 'superuser', 'groups'), 
+        }
+      ),
+    )
   list_filter = ('language', 'parent', )
 
 # make it admin'able

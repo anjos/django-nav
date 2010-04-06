@@ -1,0 +1,28 @@
+{% load i18n nav_tags %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>{% block title %}{% trans "Nav app test" %}{% endblock %}</title>
+    {% block media %}<!-- No media extensions provided -->{% endblock %}
+  </head>
+
+  <body>
+
+    <div id="menu">
+      {% block menu %}
+      <ul>
+        {% menu_items user.username as items %}
+        {% for item in items %}
+        <li><a href="{{ item.get_url }}" title="{% get_description item LANGUAGE_CODE %}">{% if item.image %}<img src="{{ item.image.url }}" width="{{ item.image.width }} "height="{{ item.image.height }}"/>{% else %}{% get_name item LANGUAGE_CODE %}{% endif %}</a></li>
+        {% endfor %}
+      </ul>
+      {% endblock %}
+    </div>
+
+    {% block content %}<p>{% trans "Hello, this is the home page." %}</p>{% endblock %}
+
+    <div class="footer">
+     <hr /><p>{% trans "Automatically generated at " %}{% now "r" %}</p>
+    </div>
+
+ </body>
+</html>

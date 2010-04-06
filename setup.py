@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 setup(
 
     name = "nav",
-    version = "0.1.1", 
+    version = "0.2", 
     packages = find_packages(),
 
     # we also need all translation files and templates
@@ -27,10 +27,10 @@ setup(
     install_requires = [
       'Django>=1.1',
       'docutils',
+      'PIL',
       ],
 
     dependency_links = [
-      'http://docutils.sourceforge.net/docutils-snapshot.tgz',
       ],
 
     # metadata for upload to PyPI

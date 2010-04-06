@@ -1,49 +1,49 @@
 # Dear emacs, this is -*- Makefile -*-
 # Created by Andre Anjos <Andre.dos.Anjos@gmail.com>, 20-Mar-2007
 
-# These are helpers
-MAKE_MESSAGE=sw/django-admin.py makemessages --all --extension=html,py,txt
-COMPILE_MESSAGE=sw/django-admin.py compilemessages
+# These are variables you can configure for your application
+python=python2.6
 LANGUAGES=en pt_BR fr es
-PYTHON=python2.5
-PROJECT=nav
+
+# These are helpers
+admin=sw/bin/django-admin.py
+project=nav
+MAKE_MESSAGE=$(admin) makemessages --all --extension=html,py,txt
+COMPILE_MESSAGE=$(admin) compilemessages
 
 .PHONY: test clean 
 
-# ACTION: Executes a simple cleanup (remove '~' files and pyc files) and then
-# will compile the PO locale files.
-all: simpleclean
+.PHONY: clean mrproper generate_bootstrap bootstrap upgrade strings compile languages 
 
-# ACTION: Builds the PO locale files, by reading our source code and updating
-# the existing message catalog. This will not compile the resulting PO source
-# files.
-strings:
-	@echo "Updating language files...";
-	@cd $(PROJECT); for l in $(LANGUAGES); do if [ ! -d locale/$$l ]; then mkdir -pv locale/$$l; fi; done;
-	@cd $(PROJECT) && ../$(MAKE_MESSAGE);
+generate_bootstrap:
+	$(MAKE) --directory=scripts generate
 
-# ACTION: This will literally compile the PO files into MO files, that can be
-# loaded by your web application
-compile:
-	@echo "Compiling language files...";
-	@cd $(PROJECT) && ../$(COMPILE_MESSAGE);
+bootstrap: generate_bootstrap
+	@./scripts/bootstrap.py --quiet --no-site-packages --python=$(python) sw
 
-install_django:
-	@./scripts/install_django.sh;
+upgrade:
+	@./scripts/bootstrap.py --quiet --no-site-packages --python=$(python) --upgrade sw
 
-remove_django:
-	@rm -rf sw*
+clean: 	
+	@find . -name '*~' -print0 | xargs -0 rm -vf 
+	@rm -rf pip-log.txt *.egg-info
+	$(MAKE) --directory=scripts clean
+	$(MAKE) --directory=test clean
 
-languages: install_django strings compile
+test:
+	$(MAKE) --directory=test all
 
-update_languages:
-	@for l in $(LANGUAGES); do cp test/sw/nav*/nav/locale/$$l/LC_MESSAGES/django.po nav/locale/$$l/LC_MESSAGES/; done
+mrproper: clean
+	@rm -rf sw 
+	$(MAKE) --directory=scripts mrproper 
+	$(MAKE) --directory=test mrproper
+	@find . -name '*.pyc' -or -name '*.pyo' -print0 | xargs -0 rm -vf
 
-test: 
-	@cd test && ./run.sh
+strings: bootstrap
+	@cd $(project); for l in $(LANGUAGES); do if [ ! -d locale/$$l ]; then mkdir -pv locale/$$l; fi; done;
+	@cd $(project) && ../$(MAKE_MESSAGE);
 
-clean: remove_django
-	find . -name '*~' -print0 | xargs -0 rm -vf 
-	find . -name '*.py?' -print0 | xargs -0 rm -vf
-	@cd test && ./cleanup.sh
-	@rm -rf *.egg-info build temp
+compile: bootstrap
+	@cd $(project) && ../$(COMPILE_MESSAGE);
+
+languages: strings compile
