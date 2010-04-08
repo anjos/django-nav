@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-22 15:49+0200\n"
+"POT-Creation-Date: 2010-04-08 14:05+0200\n"
 "PO-Revision-Date: 2009-09-22 09:55\n"
 "Last-Translator: <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,19 +16,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.4.5.svn\n"
 
-#: models.py:9 models.py:38
+#: admin.py:22
+msgid "Images"
+msgstr ""
+
+#: admin.py:28
+msgid "Permissions"
+msgstr ""
+
+#: models.py:20
+msgid "Any user"
+msgstr ""
+
+#: models.py:21
+msgid "Authenticated"
+msgstr ""
+
+#: models.py:22
+msgid "Anonymous"
+msgstr ""
+
+#: models.py:23
+msgid "Administrator"
+msgstr ""
+
+#: models.py:24
+msgid "Staff"
+msgstr ""
+
+#: models.py:25
+msgid "Belonging to a group"
+msgstr ""
+
+#: models.py:29
+msgid "0 (highest)"
+msgstr ""
+
+#: models.py:34
+msgid "5 (default)"
+msgstr ""
+
+#: models.py:39
+msgid "10 (lowest)"
+msgstr ""
+
+#: models.py:42 models.py:127
 msgid "Name"
 msgstr "Nom"
 
-#: models.py:10 models.py:39
+#: models.py:43 models.py:128
 msgid "The name of the menu item. That is what will be displayed."
 msgstr "Le nom de l'élément de menu. C'est ça que sera affiché."
 
-#: models.py:11 models.py:40
+#: models.py:45 models.py:129
 msgid "Description"
 msgstr "Description"
 
-#: models.py:11 models.py:40
+#: models.py:45 models.py:129
 msgid ""
 "This is the description of the menu item. It may be shown when you hover a "
 "menu item."
@@ -36,15 +80,15 @@ msgstr ""
 "Ceci est la description de l'élément de menu. Elle peut être affiché lorsque "
 "vous passez le souris sur un élément de menu."
 
-#: models.py:12
+#: models.py:47
 msgid "URL"
 msgstr "URL"
 
-#: models.py:12
+#: models.py:47
 msgid "The URL this menu item links to."
 msgstr "L'URL de cet élément de menu."
 
-#: models.py:13
+#: models.py:49
 msgid ""
 "If you would like that this item comes under another one, select it here. "
 "Please note that the appearence of this item will then get conditioned to "
@@ -54,40 +98,108 @@ msgstr ""
 "sélectionner ici. S'il vous plaît noter que l'affichage de cet élément sera "
 "alors conditionnée à l'élément parent."
 
-#: models.py:14 models.py:37
+#: models.py:51 models.py:126
 msgid "Language"
 msgstr "Langue"
 
-#: models.py:14
+#: models.py:51
 msgid "Choose the language to which the name applies to."
 msgstr "Choisissez la langue à laquelle le nom s'applique."
 
-#: models.py:17
+#: models.py:53
+msgid "Priority"
+msgstr ""
+
+#: models.py:53
+msgid ""
+"If you would like to move this item so it appears first, control it using "
+"this field. Lower numbers means a menu item has more priority and make it "
+"appear first. Menu items with the same priority are sorted alphabetically."
+msgstr ""
+
+#: models.py:55
+msgid "Image"
+msgstr ""
+
+#: models.py:55
+msgid ""
+"If you would like this menu item to be represented by an image, upload it "
+"here."
+msgstr ""
+
+#: models.py:57
+msgid "Image URL"
+msgstr ""
+
+#: models.py:57
+msgid ""
+"If you set this option to an URL, it will be used <b>instead</b> of the "
+"image field. Please note you should also set the width and height of the "
+"image."
+msgstr ""
+
+#: models.py:59
+msgid "Width"
+msgstr ""
+
+#: models.py:59
+msgid ""
+"The width of the image to display. This setting overrides values provided by "
+"the image itself."
+msgstr ""
+
+#: models.py:61
+msgid "Height"
+msgstr ""
+
+#: models.py:61
+msgid ""
+"The height of the image to display. This setting overrides values provided "
+"by the image itself."
+msgstr ""
+
+#: models.py:63
+msgid "User type"
+msgstr ""
+
+#: models.py:63
+msgid ""
+"Set this to determine if the item will be showed only to a subgroup of users."
+msgstr ""
+
+#: models.py:66
+msgid ""
+"If you have set \"For users in a group\" as the user type choice, select "
+"here the groups of users which will see this menu item. Otherwise, this "
+"parameter is ignored."
+msgstr ""
+
+#: models.py:69
 msgid "menu item"
 msgstr "élément de menu"
 
-#: models.py:18
+#: models.py:70
 msgid "menu items"
 msgstr "éléments de menu"
 
-#: models.py:30
+#: models.py:82
 #, python-format
 msgid "Menu item \"%(name)s\", %(description)s (depth %(depth)d)"
 msgstr "Élément de menu \"%(name)s\", %(description)s (profondeur %(depth)d)"
 
-#: models.py:32
+#: models.py:84
 #, python-format
 msgid "Menu item \"%(name)s\" (depth %(depth)d)"
 msgstr "Élément de menu \"%(name)s\" (profondeur %(depth)d)"
 
-#: models.py:37
+#: models.py:126
 msgid "Choose the language to which this variant applies to."
 msgstr "Choisissez la langue à laquelle s'applique cette variante."
 
-#: models.py:43
+#: models.py:132
 msgid "menu item translation"
 msgstr "traduction d'élément de menu"
 
-#: models.py:44
+#: models.py:133
 msgid "menu item translations"
 msgstr "traductions d'élément de menu"

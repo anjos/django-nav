@@ -39,11 +39,11 @@ mrproper: clean
 	$(MAKE) --directory=test mrproper
 	@find . -name '*.pyc' -or -name '*.pyo' -print0 | xargs -0 rm -vf
 
-strings: bootstrap
+strings:
 	@cd $(project); for l in $(LANGUAGES); do if [ ! -d locale/$$l ]; then mkdir -pv locale/$$l; fi; done;
 	@cd $(project) && ../$(MAKE_MESSAGE);
 
-compile: bootstrap
+compile:
 	@cd $(project) && ../$(COMPILE_MESSAGE);
 
 languages: strings compile
