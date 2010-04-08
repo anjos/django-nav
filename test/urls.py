@@ -14,6 +14,8 @@ urlpatterns = patterns('',
       'django.views.i18n.javascript_catalog'),
     url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog'),
     url(r'^rosetta/', include('rosetta.urls')),
+    url(r'^login/$', 'views.login', name='login'), 
+    url(r'^logout/$', 'views.logout', name='logout'),
 
     # Media serving
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',

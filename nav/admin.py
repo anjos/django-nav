@@ -5,36 +5,42 @@
 
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from nav.models import * 
+from models import * 
 
 def translations(item):
   return item.itemtranslation_set.count()
 
 class ItemAdmin(admin.ModelAdmin):
   model = Item 
-  list_display = ('name', 'url', 'parent', 'description', 'language',
-      translations, )
+  list_display = ('name', 'url', 'parent', 'description', 'language', 'priority', 'user', translations, )
   fieldsets = (
       (None, 
         {
-          'fields': ('name', 'url', 'parent', 'description', 'language'),
+          'fields': ('name', 'url', 'parent', 'description', 'language', 'priority'),
+        }
+      ),
+      (_(u'Images'),
+        { 
+          'classes': ('collapse',),
+          'fields': ('image_url', 'image', 'image_width', 'image_height',),
         }
       ),
       (_(u'Permissions'), 
         {
           'classes': ('collapse',),
-          'fields': ('staff', 'superuser', 'groups'), 
+          'fields': ('user', 'groups'), 
         }
       ),
     )
-  list_filter = ('language', 'parent', )
+  list_filter = ('language', 'priority',)
+  ordering = ('priority', 'name')
 
 # make it admin'able
 admin.site.register(Item, ItemAdmin)
 
-class ItemiTranslationAdmin(admin.ModelAdmin):
+class ItemTranslationAdmin(admin.ModelAdmin):
   model = ItemTranslation
   list_display = ('name', 'description', 'language', )
   list_filter = ('language', ) 
 
-admin.site.register(ItemTranslation, ItemiTranslationAdmin)
+admin.site.register(ItemTranslation, ItemTranslationAdmin)

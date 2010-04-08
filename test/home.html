@@ -9,16 +9,43 @@
 
     <div id="menu">
       {% block menu %}
-      <ul>
-        {% menu_items user.username as items %}
+      <p style="padding: 10px; background-color: #cec; border: 1px green solid">
+      <span style="font-weight: bold;">Generated menu:</span>
+        {% menu_items for user as items %}
         {% for item in items %}
-        <li><a href="{{ item.get_url }}" title="{% get_description item LANGUAGE_CODE %}">{% if item.image %}<img src="{{ item.image.url }}" width="{{ item.image.width }} "height="{{ item.image.height }}"/>{% else %}{% get_name item LANGUAGE_CODE %}{% endif %}</a></li>
+        <span class="item"><a href="{{ item.get_url }}" title="{% get_description item LANGUAGE_CODE %}">{% if item.has_image %}<img src="{{ item.get_image_url }}" height="{{ item.image_height }}" width="{{ image.image_width }}" alt="{% get_name item LANGUAGE_CODE %}"/>{% else %}{% get_name item LANGUAGE_CODE %}{% endif %}</a></span>
         {% endfor %}
-      </ul>
+      </p>
       {% endblock %}
     </div>
 
-    {% block content %}<p>{% trans "Hello, this is the home page." %}</p>{% endblock %}
+    {% block content %}
+    <h2>Debugging informations</h2>
+
+    <p style="font-size: 1.2em;">Current user is: <b>{{ user }}</b> / Language code: <b>{{ LANGUAGE_CODE }}</b></p>
+    
+    {% menu_items for user as show_items %}
+    {% for item in show_items %}
+    <p style="border-top:2px solid black;"><i>{{ item }}</i>:</p>
+    <ul>
+      <li><b>name</b>: {{ item.name }} (translation: {% get_name item LANGUAGE_CODE %})</li>
+      <li><b>language</b>: {{ item.language }}</li>
+      <li><b>description</b>: {{ item.description }} (translation: {% get_description item LANGUAGE_CODE %})</li>
+      <li><b>priority</b>: {{ item.get_priority_display }}</li>
+      <li><b>audience</b>: {{ item.get_user_display }} ({{ item.user }})</li>
+      <li><b>has image</b>: {{ item.has_image }}
+        {% if item.has_image %}
+        <ul>
+          <li><b>image url</b>: {{ item.get_image_url }}</li>
+          <li><b>image width</b>: {{ item.image_width }}</li>
+          <li><b>image height</b>: {{ item.image_height }}</li>
+        </ul>
+        {% endif %}
+      </li>
+    </ul>
+    {% endfor %}
+    
+    {% endblock %}
 
     <div class="footer">
      <hr /><p>{% trans "Automatically generated at " %}{% now "r" %}</p>

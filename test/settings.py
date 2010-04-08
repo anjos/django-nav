@@ -4,13 +4,12 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os
 
-BASEDIR = os.environ['BASEDIR'] #defined by the caller!
+BASEDIR = os.path.dirname(os.path.realpath(__file__)) 
 SITE_ID = 1
-if SITE_ID == 1: # we are at localhost
-  EMAIL_PORT = 1025
+EMAIL_PORT = 1025
+LOGIN_REDIRECT_URL = '/'
 
-INSTALLDIR = os.path.join(BASEDIR, 'project')
-DATABASE = os.path.join(INSTALLDIR, 'db.sql3')
+DATABASE = os.path.join(BASEDIR, 'db.sql3')
 
 # mail settings for adminstration and management bussiness
 ADMINS = (
@@ -36,22 +35,21 @@ TIME_ZONE = 'Europe/Zurich'
 # http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
 # http://blogs.law.harvard.edu/tech/stories/storyReader$15
 LANGUAGE_CODE = 'en'
-LOCALE_PATHS = ( '%s/templates/locale' % INSTALLDIR, 
-                 '%s/locale' % INSTALLDIR,
-                )
+LOCALE_PATHS = [] 
 
 # Valid languages for this website
 gettext = lambda s: s
 LANGUAGES = (
-  ('pt-br', gettext('Brazilian Portuguese')),
   ('en', gettext('English')),
+  ('pt-br', gettext('Brazilian Portuguese')),
   ('fr', gettext('French')),
   ('es', gettext('Spanish')),
 )
+DEFAULT_LANGUAGE = 1 
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(BASEDIR, 'media')
+MEDIA_ROOT = BASEDIR 
 
 # URL that handles the media served from MEDIA_ROOT.
 # Example: "http://media.lawrence.com/"
@@ -63,7 +61,7 @@ MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/django/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'awelriasdvnk1346597u9-0u&&&*2-409u90-adfg---s+++xx'
+SECRET_KEY = 'awelriaqwpo098bv36256#%$&%asfd409u90-adfg---s+++xx'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -76,7 +74,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.auth', #for users and permissions
   'django.core.context_processors.media', #for MEDIA_URL
   'django.core.context_processors.i18n', #for LANGUAGES 
-  'nav.context_processors.navigation', #for menus 
 )
 
 MIDDLEWARE_CLASSES = (
@@ -87,14 +84,13 @@ MIDDLEWARE_CLASSES = (
   'django.middleware.doc.XViewMiddleware',
 )
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'urls'
 
 # file browser stuff
 TEMPLATE_DIRS = (
   # Put strings here, like "/home/html/django_templates".
   # Always use forward slashes, even on Windows.
-  '%s/templates' % INSTALLDIR,
-  MEDIA_ROOT,
+  BASEDIR,
 )
 
 INSTALLED_APPS = (

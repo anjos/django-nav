@@ -4,17 +4,17 @@
     "model": "nav.item", 
     "fields": {
       "parent": null, 
-      "name": "anonymous item", 
+      "name": "Professional Website", 
       "language": "en", 
-      "url": "{% url media \"\" %}", 
+      "url": "http://andreanjos.org/", 
       "image": "", 
-      "image_width": null, 
-      "priority": 5, 
-      "image_height": null, 
-      "image_url": "", 
-      "user": "N", 
+      "image_width": 16, 
+      "priority": 0, 
+      "image_height": 16, 
+      "image_url": "http://andreanjos.org/media/favicon.ico", 
+      "user": "X", 
       "groups": [], 
-      "description": "Only shows if user is anonymous"
+      "description": "A link to my professional website"
     }
   }, 
   {
@@ -22,17 +22,17 @@
     "model": "nav.item", 
     "fields": {
       "parent": null, 
-      "name": "item for logged-in users", 
+      "name": "Google", 
       "language": "en", 
-      "url": "{% url media \"\" %}", 
+      "url": "http://www.google.com/", 
       "image": "", 
-      "image_width": null, 
+      "image_width": 16, 
       "priority": 5, 
-      "image_height": null, 
-      "image_url": "", 
-      "user": "L", 
+      "image_height": 16, 
+      "image_url": "http://www.google.com/favicon.ico", 
+      "user": "X", 
       "groups": [], 
-      "description": "Shows only for logged in users"
+      "description": "Visit the Google Website"
     }
   }, 
   {
@@ -40,17 +40,17 @@
     "model": "nav.item", 
     "fields": {
       "parent": null, 
-      "name": "staff users (only)", 
+      "name": "Login", 
       "language": "en", 
-      "url": "{% url media \"\" %}", 
-      "image": "", 
-      "image_width": null, 
-      "priority": 5, 
-      "image_height": null, 
+      "url": "/login/", 
+      "image": "menus/2010/04/go-next.png", 
+      "image_width": 16, 
+      "priority": 10, 
+      "image_height": 16, 
       "image_url": "", 
-      "user": "S", 
+      "user": "N", 
       "groups": [], 
-      "description": "Shows only for users which are staff"
+      "description": "Login to this website"
     }
   }, 
   {
@@ -58,7 +58,25 @@
     "model": "nav.item", 
     "fields": {
       "parent": null, 
-      "name": "group item", 
+      "name": "Logout", 
+      "language": "en", 
+      "url": "/logout/", 
+      "image": "menus/2010/04/system-log-out.png", 
+      "image_width": 16, 
+      "priority": 10, 
+      "image_height": 16, 
+      "image_url": "", 
+      "user": "L", 
+      "groups": [], 
+      "description": "Logout from this website"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "nav.item", 
+    "fields": {
+      "parent": null, 
+      "name": "Test group", 
       "language": "en", 
       "url": "{% url media \"\" %}", 
       "image": "", 
@@ -70,25 +88,7 @@
       "groups": [
         1
       ], 
-      "description": "Item for users belonging to a group"
-    }
-  }, 
-  {
-    "pk": 5, 
-    "model": "nav.item", 
-    "fields": {
-      "parent": null, 
-      "name": "Any user item", 
-      "language": "en", 
-      "url": "{% url media \"\" %}", 
-      "image": "", 
-      "image_width": null, 
-      "priority": 10, 
-      "image_height": null, 
-      "image_url": "", 
-      "user": "X", 
-      "groups": [], 
-      "description": "Item that will be shown to any user that visits."
+      "description": "Only shows to a subgroup of people"
     }
   }, 
   {
@@ -96,17 +96,77 @@
     "model": "nav.item", 
     "fields": {
       "parent": null, 
-      "name": "Image url", 
+      "name": "Administration Panel", 
       "language": "en", 
-      "url": "{% url media \"\" %}", 
+      "url": "{% url admin:index %}", 
       "image": "", 
-      "image_width": 16, 
-      "priority": 8, 
-      "image_height": 16, 
-      "image_url": "http://www.google.com/favicon.ico", 
-      "user": "X", 
+      "image_width": null, 
+      "priority": 5, 
+      "image_height": null, 
+      "image_url": "", 
+      "user": "S", 
       "groups": [], 
-      "description": "This is an item that has an image URL"
+      "description": "Click here to access our administration panel"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 1, 
+      "name": "Website Profissional", 
+      "language": "pt-br", 
+      "description": "Um atalho para meu website profissional"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 2, 
+      "name": "Google", 
+      "language": "pt-br", 
+      "description": "Visite o website do Google"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 3, 
+      "name": "Conex\u00e3o", 
+      "language": "pt-br", 
+      "description": "Fazer conex\u00e3o a este website"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 4, 
+      "name": "Desconectar", 
+      "language": "pt-br", 
+      "description": "Desconectar deste website"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 6, 
+      "name": "Painel de Administra\u00e7\u00e3o", 
+      "language": "pt-br", 
+      "description": "Clique aqui para acessar nosso painel de administra\u00e7\u00e3o"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 5, 
+      "name": "Grupo de teste", 
+      "language": "pt-br", 
+      "description": "Somente \u00e9 mostrado a um subgrupo de pessoas"
     }
   }
 ]
