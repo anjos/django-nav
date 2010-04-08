@@ -18,7 +18,25 @@ def get_name(item, language): return item.get_name(language)
 
 @register.simple_tag
 def get_description(item, language): return item.get_description(language)
-  
+
+class TemplateUrlNode(template.Node):
+  def __init__(self, item):
+    self.item = template.Variable(item)
+
+  def render(self, context):
+    return (self.item).resolve(context).get_url(context)
+
+@register.tag(name='item_url')
+def get_item_url(parser, token):
+  try:
+    # Splitting by None == splitting by spaces.
+    tag_name, arg = token.contents.split(None, 1)
+  except ValueError:
+    raise template.TemplateSyntaxError, \
+        "%r tag requires 1 argument (the item)" % token.contents.split()[0]
+  item = arg.strip() 
+  return TemplateUrlNode(item)
+
 class RootNavigationNode(template.Node):
   def __init__(self, user, var_name):
     self.user = template.Variable(user)
@@ -46,5 +64,5 @@ def get_root_items(parser, token):
   if not m:
     raise template.TemplateSyntaxError, \
         "%r tag has invalid arguments - review your code." % tag_name
-  username, var_name = m.groups()
-  return RootNavigationNode(username, var_name)
+  user, var_name = m.groups()
+  return RootNavigationNode(user, var_name)

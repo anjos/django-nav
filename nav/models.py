@@ -83,9 +83,9 @@ class Item(models.Model):
     else:
       return ugettext(u'Menu item "%(name)s" (depth %(depth)d)' % {'name':self.name, 'depth':self.depth()})
 
-  def get_url(self):
+  def get_url(self, context):
     """Returns the URL of this link, completely resolved.""" 
-    return Template(self.url).render(Context())
+    return Template(self.url).render(context)
 
   def get_name(self, language):
     """Returns the name for this menu item, in the desired language. Defaults

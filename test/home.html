@@ -13,7 +13,7 @@
       <span style="font-weight: bold;">Generated menu:</span>
         {% menu_items for user as items %}
         {% for item in items %}
-        <span class="item"><a href="{{ item.get_url }}" title="{% get_description item LANGUAGE_CODE %}">{% if item.has_image %}<img src="{{ item.get_image_url }}" height="{{ item.image_height }}" width="{{ image.image_width }}" alt="{% get_name item LANGUAGE_CODE %}"/>{% else %}{% get_name item LANGUAGE_CODE %}{% endif %}</a></span>
+        <span class="item"><a href="{% item_url item %}" title="{% get_description item LANGUAGE_CODE %}">{% if item.has_image %}<img src="{{ item.get_image_url }}" height="{{ item.image_height }}" width="{{ image.image_width }}" alt="{% get_name item LANGUAGE_CODE %}"/>{% else %}{% get_name item LANGUAGE_CODE %}{% endif %}</a></span>
         {% endfor %}
       </p>
       {% endblock %}
@@ -29,6 +29,7 @@
     <p style="border-top:2px solid black;"><i>{{ item }}</i>:</p>
     <ul>
       <li><b>name</b>: {{ item.name }} (translation: {% get_name item LANGUAGE_CODE %})</li>
+      <li><b>url</b>: {% item_url item %}</li>
       <li><b>language</b>: {{ item.language }}</li>
       <li><b>description</b>: {{ item.description }} (translation: {% get_description item LANGUAGE_CODE %})</li>
       <li><b>priority</b>: {{ item.get_priority_display }}</li>
