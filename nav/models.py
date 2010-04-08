@@ -1,9 +1,17 @@
+import os, datetime
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext
 from django.conf import settings
 from django.contrib.auth.models import Group
 from django.template import Template, Context
+
+def upload_path(object, original):
+  """Tells the FileField how to choose a name for this file."""
+  size = '%dx%d' % (object.image.width, object.image.height)
+  return os.path.join('menus', datetime.date.today().strftime('%Y/%m'), 
+      size, original)
 
 class Item(models.Model):
   """Describes a menu item in a website page"""
@@ -44,7 +52,7 @@ class Item(models.Model):
 
   priority = models.PositiveIntegerField(_('Priority'), default=5, choices=priority_choices, blank=False, null=False, help_text=_(u'If you would like to move this item so it appears first, control it using this field. Lower numbers means a menu item has more priority and make it appear first. Menu items with the same priority are sorted alphabetically.'))
 
-  image = models.ImageField(_('Image'), upload_to='menus/%Y/%m', null=True, blank=True, help_text=_('If you would like this menu item to be represented by an image, upload it here.'), height_field='image_height', width_field='image_width')
+  image = models.ImageField(_('Image'), upload_to=upload_path, null=True, blank=True, help_text=_('If you would like this menu item to be represented by an image, upload it here.'), height_field='image_height', width_field='image_width')
 
   image_url = models.URLField(_('Image URL'), null=True, blank=True, help_text=_(u'If you set this option to an URL, it will be used <b>instead</b> of the image field. Please note you should also set the width and height of the image.'))
 
