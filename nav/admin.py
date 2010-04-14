@@ -5,7 +5,13 @@
 
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
+from django.conf import settings
 from models import * 
+
+class ItemTranslationAdmin(admin.TabularInline):
+  model = ItemTranslation
+  max_num = len(settings.LANGUAGES) - 1 
+  extra = len(settings.LANGUAGES) - 1 
 
 def translations(item):
   return item.itemtranslation_set.count()
@@ -34,13 +40,8 @@ class ItemAdmin(admin.ModelAdmin):
     )
   list_filter = ('language', 'priority',)
   ordering = ('priority', 'name')
+  inlines = [ ItemTranslationAdmin, ]
 
 # make it admin'able
 admin.site.register(Item, ItemAdmin)
 
-class ItemTranslationAdmin(admin.ModelAdmin):
-  model = ItemTranslation
-  list_display = ('name', 'description', 'language', )
-  list_filter = ('language', ) 
-
-admin.site.register(ItemTranslation, ItemTranslationAdmin)
