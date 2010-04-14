@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 setup(
 
     name = "nav",
-    version = "0.2.1", 
+    version = "0.3", 
     packages = find_packages(),
 
     # we also need all translation files and templates
@@ -19,6 +19,7 @@ setup(
       'nav': [
         'locale/*/LC_MESSAGES/django.po',
         'locale/*/LC_MESSAGES/django.mo',
+        'media/js/*.js',
         ],
       },
 
