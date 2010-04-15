@@ -34,7 +34,7 @@ class Item(OrderedModel):
 
   url = models.CharField(_('URL'), max_length=2048, null=True, blank=True, help_text=_('The URL this menu item links to.'))
 
-  parent = models.ForeignKey('self', null=True, blank=True, help_text=_('If you would like that this item comes under another one, select it here. Please note that the appearence of this item will then get conditioned to the appearence parent item as well.'))
+  parent = models.ForeignKey('self', _('Parent'), null=True, blank=True, help_text=_('If you would like that this item comes under another one, select it here. Please note that the appearence of this item will then get conditioned to the appearence parent item as well.'))
 
   language = models.CharField(_('Language'), max_length=8, null=False, blank=False, help_text=_('Choose the language to which the name applies to.'), choices=settings.LANGUAGES, default=settings.LANGUAGE_CODE)
 

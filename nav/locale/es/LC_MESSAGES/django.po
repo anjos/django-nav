@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-15 15:18+0200\n"
+"POT-Creation-Date: 2010-04-15 16:01+0200\n"
 "PO-Revision-Date: 2009-09-22 09:57\n"
 "Last-Translator: <andre.dos.anjos@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,20 @@ msgstr ""
 msgid "Suggest a translation using Google!"
 msgstr ""
 
-#: admin.py:57 models.py:41
+#: admin.py:47
+#, fuzzy
+msgid "Translations"
+msgstr "traducciones de elemento de menú"
+
+#: admin.py:58 models.py:41
 msgid "Image"
 msgstr ""
 
-#: admin.py:69
+#: admin.py:70
 msgid "Images"
 msgstr ""
 
-#: admin.py:75
+#: admin.py:76
 msgid "Permissions"
 msgstr ""
 
@@ -107,6 +112,10 @@ msgstr "URL"
 #: models.py:35
 msgid "The URL this menu item links to."
 msgstr "La URL de este elemento de menú de enlaces."
+
+#: models.py:37
+msgid "Parent"
+msgstr ""
 
 #: models.py:37
 msgid ""

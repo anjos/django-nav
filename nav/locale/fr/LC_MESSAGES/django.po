@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-15 15:18+0200\n"
-"PO-Revision-Date: 2010-04-15 14:31\n"
+"POT-Creation-Date: 2010-04-15 16:01+0200\n"
+"PO-Revision-Date: 2010-04-15 16:02\n"
 "Last-Translator: Admin Adminston <admin@example.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,15 +20,19 @@ msgstr ""
 msgid "Suggest a translation using Google!"
 msgstr "Suggerer une traduction avec Google!"
 
-#: admin.py:57 models.py:41
+#: admin.py:47
+msgid "Translations"
+msgstr "Traductions"
+
+#: admin.py:58 models.py:41
 msgid "Image"
 msgstr "Image"
 
-#: admin.py:69
+#: admin.py:70
 msgid "Images"
 msgstr "Images"
 
-#: admin.py:75
+#: admin.py:76
 msgid "Permissions"
 msgstr "Permissions"
 
@@ -93,12 +97,8 @@ msgid "Description"
 msgstr "Description"
 
 #: models.py:33 models.py:120
-msgid ""
-"This is the description of the menu item. It may be shown when you hover a "
-"menu item."
-msgstr ""
-"Ceci est la description de l'élément de menu. Elle peut être affiché lorsque "
-"vous passez le souris sur un élément de menu."
+msgid "This is the description of the menu item. It may be shown when you hover a menu item."
+msgstr "Ceci est la description de l'élément de menu. Elle peut être affiché lorsque vous passez le souris sur un élément de menu."
 
 #: models.py:35
 msgid "URL"
@@ -109,14 +109,12 @@ msgid "The URL this menu item links to."
 msgstr "L'URL de cet élément de menu."
 
 #: models.py:37
-msgid ""
-"If you would like that this item comes under another one, select it here. "
-"Please note that the appearence of this item will then get conditioned to "
-"the appearence parent item as well."
-msgstr ""
-"Si vous souhaitez que cet élément sois en dessous d'un autre, le "
-"sélectionner ici. S'il vous plaît noter que l'affichage de cet élément sera "
-"alors conditionnée à l'élément parent."
+msgid "Parent"
+msgstr "Parent"
+
+#: models.py:37
+msgid "If you would like that this item comes under another one, select it here. Please note that the appearence of this item will then get conditioned to the appearence parent item as well."
+msgstr "Si vous souhaitez que cet élément sois en dessous d'un autre, le sélectionner ici. S'il vous plaît noter que l'affichage de cet élément sera alors conditionnée à l'élément parent."
 
 #: models.py:39 models.py:117
 msgid "Language"
@@ -127,71 +125,44 @@ msgid "Choose the language to which the name applies to."
 msgstr "Choisissez la langue à laquelle le nom s'applique."
 
 #: models.py:41
-msgid ""
-"If you would like this menu item to be represented by an image, upload it "
-"here."
-msgstr ""
-"Si vous désirez que cet élément de menu soit representé par une image "
-"téléchargez-la ici."
+msgid "If you would like this menu item to be represented by an image, upload it here."
+msgstr "Si vous désirez que cet élément de menu soit representé par une image téléchargez-la ici."
 
 #: models.py:43
 msgid "Image URL"
 msgstr "URL d'Image"
 
 #: models.py:43
-msgid ""
-"If you set this option to an URL, it will be used <b>instead</b> of the "
-"image field. Please note you should also set the width and height of the "
-"image."
-msgstr ""
-"Si vous définissez cette option, il sera utilisé à la <b>place</b> du champ "
-"de l'image ci-dessous. S'il vous plaît notez que vous devez également "
-"définir la largeur et la hauteur de l'image dans ce cas."
+msgid "If you set this option to an URL, it will be used <b>instead</b> of the image field. Please note you should also set the width and height of the image."
+msgstr "Si vous définissez cette option, il sera utilisé à la <b>place</b> du champ de l'image ci-dessous. S'il vous plaît notez que vous devez également définir la largeur et la hauteur de l'image dans ce cas."
 
 #: models.py:45
 msgid "Width"
 msgstr "Largeur"
 
 #: models.py:45
-msgid ""
-"The width of the image to display. This setting overrides values provided by "
-"the image itself."
-msgstr ""
-"La largeur de l'image à afficher. Ce paramètre remplace les valeurs fournies "
-"par l'image elle-même."
+msgid "The width of the image to display. This setting overrides values provided by the image itself."
+msgstr "La largeur de l'image à afficher. Ce paramètre remplace les valeurs fournies par l'image elle-même."
 
 #: models.py:47
 msgid "Height"
 msgstr "Hauteur"
 
 #: models.py:47
-msgid ""
-"The height of the image to display. This setting overrides values provided "
-"by the image itself."
-msgstr ""
-"La hauteur de l'image à afficher. Ce paramètre remplace les valeurs fournies "
-"par l'image elle-même."
+msgid "The height of the image to display. This setting overrides values provided by the image itself."
+msgstr "La hauteur de l'image à afficher. Ce paramètre remplace les valeurs fournies par l'image elle-même."
 
 #: models.py:49
 msgid "User type"
 msgstr "Type d'utilisateur"
 
 #: models.py:49
-msgid ""
-"Set this to determine if the item will be showed only to a subgroup of users."
-msgstr ""
-"Réglez ce champs afin de déterminer si l'article sera montré que pour un "
-"sous-ensemble d'utilisateurs."
+msgid "Set this to determine if the item will be showed only to a subgroup of users."
+msgstr "Réglez ce champs afin de déterminer si l'article sera montré que pour un sous-ensemble d'utilisateurs."
 
 #: models.py:52
-msgid ""
-"If you have set \"For users in a group\" as the user type choice, select "
-"here the groups of users which will see this menu item. Otherwise, this "
-"parameter is ignored."
-msgstr ""
-"Si vous avez réglé \"Pour les utilisateurs dans un groupe\", comme le choix "
-"de type d'utilisateur, sélectionnez ici les groupes d'utilisateurs qui "
-"verrons cet élément de menu. Sinon, ce paramètre est ignoré."
+msgid "If you have set \"For users in a group\" as the user type choice, select here the groups of users which will see this menu item. Otherwise, this parameter is ignored."
+msgstr "Si vous avez réglé \"Pour les utilisateurs dans un groupe\", comme le choix de type d'utilisateur, sélectionnez ici les groupes d'utilisateurs qui verrons cet élément de menu. Sinon, ce paramètre est ignoré."
 
 #: models.py:55
 msgid "Select here the sites to which this item is effective."

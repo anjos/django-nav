@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-15 15:18+0200\n"
-"PO-Revision-Date: 2010-04-08 14:12\n"
+"POT-Creation-Date: 2010-04-15 16:01+0200\n"
+"PO-Revision-Date: 2010-04-15 16:03\n"
 "Last-Translator: Admin Adminston <admin@example.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,15 +20,19 @@ msgstr ""
 msgid "Suggest a translation using Google!"
 msgstr "Sugerir uma tradução usando Google!"
 
-#: admin.py:57 models.py:41
+#: admin.py:47
+msgid "Translations"
+msgstr "Tranduções"
+
+#: admin.py:58 models.py:41
 msgid "Image"
 msgstr "Imagem"
 
-#: admin.py:69
+#: admin.py:70
 msgid "Images"
 msgstr "Imagens"
 
-#: admin.py:75
+#: admin.py:76
 msgid "Permissions"
 msgstr "Permissões"
 
@@ -93,12 +97,8 @@ msgid "Description"
 msgstr "Descrição"
 
 #: models.py:33 models.py:120
-msgid ""
-"This is the description of the menu item. It may be shown when you hover a "
-"menu item."
-msgstr ""
-"Esta é a descrição do ítem de menu. Ela pode ser mostrada quando você passa "
-"o mouse por cima do ítem."
+msgid "This is the description of the menu item. It may be shown when you hover a menu item."
+msgstr "Esta é a descrição do ítem de menu. Ela pode ser mostrada quando você passa o mouse por cima do ítem."
 
 #: models.py:35
 msgid "URL"
@@ -109,14 +109,12 @@ msgid "The URL this menu item links to."
 msgstr "A URL do ítem de menu."
 
 #: models.py:37
-msgid ""
-"If you would like that this item comes under another one, select it here. "
-"Please note that the appearence of this item will then get conditioned to "
-"the appearence parent item as well."
-msgstr ""
-"Se você deseja que este ítem esteja sob um outro ítem, selecione o ítem pai "
-"aqui. Note que o aparecimento deste ítem ficará condicionada ao aparecimento "
-"do item pai."
+msgid "Parent"
+msgstr "Pai"
+
+#: models.py:37
+msgid "If you would like that this item comes under another one, select it here. Please note that the appearence of this item will then get conditioned to the appearence parent item as well."
+msgstr "Se você deseja que este ítem esteja sob um outro ítem, selecione o ítem pai aqui. Note que o aparecimento deste ítem ficará condicionada ao aparecimento do item pai."
 
 #: models.py:39 models.py:117
 msgid "Language"
@@ -127,70 +125,44 @@ msgid "Choose the language to which the name applies to."
 msgstr "Escolha o idioma o qual a tradução se aplica."
 
 #: models.py:41
-msgid ""
-"If you would like this menu item to be represented by an image, upload it "
-"here."
-msgstr ""
-"Se deseja que este ítem seja representado por uma imagem, faça o upload aqui."
+msgid "If you would like this menu item to be represented by an image, upload it here."
+msgstr "Se deseja que este ítem seja representado por uma imagem, faça o upload aqui."
 
 #: models.py:43
 msgid "Image URL"
 msgstr "URL de image"
 
 #: models.py:43
-msgid ""
-"If you set this option to an URL, it will be used <b>instead</b> of the "
-"image field. Please note you should also set the width and height of the "
-"image."
-msgstr ""
-"Se você ajustar esta opção para uma URL, esta será usada <b>ao invés</b> do "
-"campo Imagem. Por favor note que você também deve ajustar a largura e altura "
-"da imagem neste caso."
+msgid "If you set this option to an URL, it will be used <b>instead</b> of the image field. Please note you should also set the width and height of the image."
+msgstr "Se você ajustar esta opção para uma URL, esta será usada <b>ao invés</b> do campo Imagem. Por favor note que você também deve ajustar a largura e altura da imagem neste caso."
 
 #: models.py:45
 msgid "Width"
 msgstr "Largura"
 
 #: models.py:45
-msgid ""
-"The width of the image to display. This setting overrides values provided by "
-"the image itself."
-msgstr ""
-"A largura da imagem que será mostrada. Este ajuste sobre-escreve os valores "
-"providos pela imagem."
+msgid "The width of the image to display. This setting overrides values provided by the image itself."
+msgstr "A largura da imagem que será mostrada. Este ajuste sobre-escreve os valores providos pela imagem."
 
 #: models.py:47
 msgid "Height"
 msgstr "Altura"
 
 #: models.py:47
-msgid ""
-"The height of the image to display. This setting overrides values provided "
-"by the image itself."
-msgstr ""
-"A altura da imagem que será mostrada. Este ajuste sobre-escreve os valores "
-"providos pela imagem."
+msgid "The height of the image to display. This setting overrides values provided by the image itself."
+msgstr "A altura da imagem que será mostrada. Este ajuste sobre-escreve os valores providos pela imagem."
 
 #: models.py:49
 msgid "User type"
 msgstr "Tipo de usuário"
 
 #: models.py:49
-msgid ""
-"Set this to determine if the item will be showed only to a subgroup of users."
-msgstr ""
-"Ajuste este parâmetro para determinar se o ítem será mostrado apenas para um "
-"sub-grupo de usuários"
+msgid "Set this to determine if the item will be showed only to a subgroup of users."
+msgstr "Ajuste este parâmetro para determinar se o ítem será mostrado apenas para um sub-grupo de usuários"
 
 #: models.py:52
-msgid ""
-"If you have set \"For users in a group\" as the user type choice, select "
-"here the groups of users which will see this menu item. Otherwise, this "
-"parameter is ignored."
-msgstr ""
-"Se você ajustou a opção \"Tipo de usuário\" para \"Usuários pertencentes a "
-"um grupo\", selecione aqui os grupos de usuários que terão acesso a este "
-"ítem. De outra forma, este parâmetro é ignorado."
+msgid "If you have set \"For users in a group\" as the user type choice, select here the groups of users which will see this menu item. Otherwise, this parameter is ignored."
+msgstr "Se você ajustou a opção \"Tipo de usuário\" para \"Usuários pertencentes a um grupo\", selecione aqui os grupos de usuários que terão acesso a este ítem. De outra forma, este parâmetro é ignorado."
 
 #: models.py:55
 msgid "Select here the sites to which this item is effective."

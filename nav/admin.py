@@ -60,7 +60,7 @@ img.allow_tags = True
 
 class ItemAdmin(OrderedModelAdmin):
   model = Item 
-  list_display = ('name', 'url', 'parent', 'description', 'language', 'user', translations, img, 'move_up_down_links', 'order')
+  list_display = ('name', 'url', 'parent', 'description', 'language', 'user', translations, img, 'move_up_down_links')
   fieldsets = (
       (None, 
         {
