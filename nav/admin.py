@@ -50,7 +50,7 @@ class ItemAdmin(admin.ModelAdmin):
   fieldsets = (
       (None, 
         {
-          'fields': ('name', 'url', 'parent', 'description', 'language', 'priority'),
+          'fields': ('name', 'url', 'parent', 'description', 'language', 'priority', 'sites'),
         }
       ),
       (_(u'Images'),

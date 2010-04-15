@@ -19,6 +19,12 @@ admin:
 shell:
 	$(call admin,shell,.)
 
+reset:
+	$(call admin,dumpdata,.) --format=json --indent=2 > $(project).json
+	$(call admin,reset,.) --noinput nav
+	$(call admin,loaddata,.) $(project).json
+	@rm -f $(project).json
+
 clean:
 	@find . -name '*.pyc' -print0 | xargs -0 rm -f
 	@find . -name '*~' -print0 | xargs -0 rm -f

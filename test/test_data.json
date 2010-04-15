@@ -42,7 +42,7 @@
       "parent": null, 
       "name": "Login", 
       "language": "en", 
-      "url": "/login/", 
+      "url": "/login/?next={{ full_path }}", 
       "image": "menus/2010/04/go-next.png", 
       "image_width": 16, 
       "priority": 10, 
@@ -60,8 +60,8 @@
       "parent": null, 
       "name": "Logout", 
       "language": "en", 
-      "url": "/logout/", 
-      "image": "menus/2010/04/system-log-out.png", 
+      "url": "/logout/?next={{ full_path }}", 
+      "image": "menus/2010/04/16x16/system-log-out_.png", 
       "image_width": 16, 
       "priority": 10, 
       "image_height": 16, 
@@ -116,7 +116,7 @@
       "item": 1, 
       "name": "Website Profissional", 
       "language": "pt-br", 
-      "description": "Um atalho para meu website profissional"
+      "description": "Um link para o meu site profissional"
     }
   }, 
   {
@@ -126,7 +126,7 @@
       "item": 2, 
       "name": "Google", 
       "language": "pt-br", 
-      "description": "Visite o website do Google"
+      "description": "Visite o site Google"
     }
   }, 
   {
@@ -167,6 +167,126 @@
       "name": "Grupo de teste", 
       "language": "pt-br", 
       "description": "Somente \u00e9 mostrado a um subgrupo de pessoas"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 1, 
+      "name": "Site Web Professionnel", 
+      "language": "fr", 
+      "description": "Un lien vers mon site professionnel"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 1, 
+      "name": "Sitio Web Profesional", 
+      "language": "es", 
+      "description": "Un enlace a mi sitio web profesional"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 2, 
+      "name": "Google", 
+      "language": "fr", 
+      "description": "Visitez le site Web de Google"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 2, 
+      "name": "Google", 
+      "language": "es", 
+      "description": "Visite el sitio web Google"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 5, 
+      "name": "Ensemble de teste", 
+      "language": "fr", 
+      "description": "Elle n'appara\u00eet que pour un sous-ensemble de la population"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 5, 
+      "name": "Grupo de prueba", 
+      "language": "es", 
+      "description": "S\u00f3lo se muestra a un subconjunto de personas"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 6, 
+      "name": "Panneau d'Administration", 
+      "language": "fr", 
+      "description": "Cliquez ici pour acc\u00e9der notre paneau d'adminstration"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 6, 
+      "name": "Panel de Administraci\u00f3n", 
+      "language": "es", 
+      "description": "Haga clic aqu\u00ed para acceder al panel de administraci\u00f3n"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 3, 
+      "name": "Connexion", 
+      "language": "fr", 
+      "description": "Se connecter a ce site web"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 3, 
+      "name": "Conexi\u00f3n", 
+      "language": "es", 
+      "description": "Haga la conexi\u00f3n a este sitio web"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 4, 
+      "name": "D\u00e9connecter", 
+      "language": "fr", 
+      "description": "Deconnectez de ce site web"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "nav.itemtranslation", 
+    "fields": {
+      "item": 4, 
+      "name": "Desconectar", 
+      "language": "es", 
+      "description": "Desconecte de este sitio web"
     }
   }
 ]

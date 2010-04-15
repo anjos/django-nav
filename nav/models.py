@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext
 from django.conf import settings
 from django.contrib.auth.models import Group
+from django.contrib.sites.models import Site
 from django.template import Template, Context
 
 def upload_path(object, original):
@@ -65,6 +66,9 @@ class Item(models.Model):
   groups = models.ManyToManyField(Group, null=True, blank=True,
       help_text=_('If you have set "For users in a group" as the user type choice, select here the groups of users which will see this menu item. Otherwise, this parameter is ignored.'))
 
+  sites = models.ManyToManyField(Site, null=True, blank=True,
+      help_text=_('Select here the sites to which this item is effective.'))
+
   class Meta:
     verbose_name = _('menu item')
     verbose_name_plural = _('menu items')
@@ -98,7 +102,9 @@ class Item(models.Model):
     except: return self.description
 
   def is_allowed(self, user):
-    """Tells if the given user is allowed to see this menu item."""
+    """Tells if the given user/site is allowed to see this menu item."""
+    if Site.objects.get_current() not in self.sites.all(): return False
+
     if self.user == 'X': return True
     elif self.user == 'L' and user.is_authenticated(): return True
     elif self.user == 'N' and not user.is_authenticated(): return True
