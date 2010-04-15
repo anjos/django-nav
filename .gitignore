@@ -7,5 +7,4 @@ build/
 scripts/bootstrap.py
 scripts/ez_setup.py
 test/db.sql3
-test/menus
 test/nav

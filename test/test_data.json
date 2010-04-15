@@ -9,6 +9,9 @@
       "url": "http://andreanjos.org/", 
       "image": "", 
       "image_width": 16, 
+      "sites": [
+        1
+      ], 
       "priority": 0, 
       "image_height": 16, 
       "image_url": "http://andreanjos.org/media/favicon.ico", 
@@ -27,6 +30,9 @@
       "url": "http://www.google.com/", 
       "image": "", 
       "image_width": 16, 
+      "sites": [
+        1
+      ], 
       "priority": 5, 
       "image_height": 16, 
       "image_url": "http://www.google.com/favicon.ico", 
@@ -43,8 +49,9 @@
       "name": "Login", 
       "language": "en", 
       "url": "/login/?next={{ full_path }}", 
-      "image": "menus/2010/04/go-next.png", 
+      "image": "menus/2010/04/16x16/go-next.png", 
       "image_width": 16, 
+      "sites": [], 
       "priority": 10, 
       "image_height": 16, 
       "image_url": "", 
@@ -61,8 +68,11 @@
       "name": "Logout", 
       "language": "en", 
       "url": "/logout/?next={{ full_path }}", 
-      "image": "menus/2010/04/16x16/system-log-out_.png", 
+      "image": "menus/2010/04/16x16/system-log-out.png", 
       "image_width": 16, 
+      "sites": [
+        1
+      ], 
       "priority": 10, 
       "image_height": 16, 
       "image_url": "", 
@@ -81,6 +91,9 @@
       "url": "{% url media \"\" %}", 
       "image": "", 
       "image_width": null, 
+      "sites": [
+        1
+      ], 
       "priority": 5, 
       "image_height": null, 
       "image_url": "", 
@@ -101,6 +114,9 @@
       "url": "{% url admin:index %}", 
       "image": "", 
       "image_width": null, 
+      "sites": [
+        1
+      ], 
       "priority": 5, 
       "image_height": null, 
       "image_url": "", 

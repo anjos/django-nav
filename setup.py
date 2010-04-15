@@ -29,6 +29,7 @@ setup(
       'Django>=1.1',
       'docutils',
       'PIL',
+      'django-order',
       ],
 
     dependency_links = [
