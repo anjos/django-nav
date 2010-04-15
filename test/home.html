@@ -22,7 +22,7 @@
     {% block content %}
     <h2>Debugging informations</h2>
 
-    <p style="font-size: 1.2em;">Current user is: <b>{{ user }}</b> / Language code: <b>{{ LANGUAGE_CODE }}</b></p>
+    <p style="font-size: 1.2em;">Current user is: <b>{{ user }}</b> / Site: <b>{{ site.domain }}</b> / Language code: <b>{{ LANGUAGE_CODE }}</b></p>
     
     {% menu_items for user as show_items %}
     {% for item in show_items %}
@@ -32,7 +32,7 @@
       <li><b>url</b>: {% item_url item %}</li>
       <li><b>language</b>: {{ item.language }}</li>
       <li><b>description</b>: {{ item.description }} (translation: {% get_description item LANGUAGE_CODE %})</li>
-      <li><b>priority</b>: {{ item.get_priority_display }}</li>
+      <li><b>order</b>: {{ item.order }}</li>
       <li><b>audience</b>: {{ item.get_user_display }} ({{ item.user }})</li>
       <li><b>has image</b>: {{ item.has_image }}
         {% if item.has_image %}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-15 11:56+0200\n"
+"POT-Creation-Date: 2010-04-15 15:18+0200\n"
 "PO-Revision-Date: 2010-04-08 14:12\n"
 "Last-Translator: Admin Adminston <admin@example.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,15 @@ msgstr ""
 msgid "Suggest a translation using Google!"
 msgstr "Sugerir uma tradução usando Google!"
 
-#: admin.py:57
+#: admin.py:57 models.py:41
+msgid "Image"
+msgstr "Imagem"
+
+#: admin.py:69
 msgid "Images"
 msgstr "Imagens"
 
-#: admin.py:63
+#: admin.py:75
 msgid "Permissions"
 msgstr "Permissões"
 
@@ -121,10 +125,6 @@ msgstr "Idioma"
 #: models.py:39
 msgid "Choose the language to which the name applies to."
 msgstr "Escolha o idioma o qual a tradução se aplica."
-
-#: models.py:41
-msgid "Image"
-msgstr "Imagem"
 
 #: models.py:41
 msgid ""

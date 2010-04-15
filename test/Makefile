@@ -5,10 +5,13 @@
 admin=PYTHONPATH=$(2) ../sw/bin/django-admin.py $(1) --settings=settings
 python=../sw/bin/python
 project=nav
+pydir=$(shell $(python) -c "import sys; print 'python%d.%d' % sys.version_info[0:2]")
+linkapp=if [ ! -L $(1) -a -d ../sw/lib/$(pydir)/site-packages/$(1)/media ]; then ln -s ../sw/lib/$(pydir)/site-packages/$(1)/media $(1); fi
 
 all:
 	@if [ ! -e db.sql3 ]; then $(MAKE) admin; fi
 	@if [ ! -L $(project) -a -d ../$(project)/media ]; then ln -s ../$(project)/media $(project); fi
+	@$(call linkapp,order)
 	$(call admin,runserver,..:.) 8080
 
 admin:
@@ -34,5 +37,6 @@ smtp:
 
 mrproper: clean
 	@rm -f $(project)
+	@rm -f order
 	@rm -rf packages
 	@rm -f *.sql3

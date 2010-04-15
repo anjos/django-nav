@@ -44,7 +44,7 @@ class RootNavigationNode(template.Node):
 
   def render(self, context):
     try:
-      items = [k for k in Item.objects.filter(parent=None).order_by('priority', 'name') if k.is_allowed(self.user.resolve(context))]
+      items = [k for k in Item.objects.filter(parent=None).order_by('order') if k.is_allowed(self.user.resolve(context))]
       context[self.var_name] = items 
     except template.VariableDoesNotExist:
       raise template.TemplateSyntaxError, \

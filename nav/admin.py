@@ -44,10 +44,23 @@ class ItemTranslationAdmin(admin.TabularInline):
   
 def translations(item):
   return item.itemtranslation_set.count()
+translations.short_description = _(u'Translations')
+
+def img(self):
+  if self.has_image():
+    return '<img src="%(src)s" height="%(height)d" width="%(width)d"/>' % \
+        {
+          'src': self.get_image_url(),
+          'height': self.image_height,
+          'width': self.image_width,
+        }
+  return u'(None)' 
+img.short_description = _(u'Image') 
+img.allow_tags = True
 
 class ItemAdmin(OrderedModelAdmin):
   model = Item 
-  list_display = ('name', 'url', 'parent', 'description', 'language', 'user', translations, 'move_up_down_links')
+  list_display = ('name', 'url', 'parent', 'description', 'language', 'user', translations, img, 'move_up_down_links', 'order')
   fieldsets = (
       (None, 
         {

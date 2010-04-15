@@ -6,6 +6,10 @@
 """Context processors for standard things on every template rendering
 """
 
+from django.contrib.sites.models import Site
+
 def full_path(request):
   return {'full_path': request.get_full_path()}
 
+def current_site(request):
+  return {'site': Site.objects.get_current()}

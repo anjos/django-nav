@@ -75,6 +75,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
   'django.core.context_processors.media', #for MEDIA_URL
   'django.core.context_processors.i18n', #for LANGUAGES 
   'context_processors.full_path', #so we know the current path requested
+  'context_processors.current_site', #so we know which site we are in
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,6 +103,7 @@ INSTALLED_APPS = (
   'django.contrib.admin',
   'django.contrib.markup',
   'rosetta',
+  'order',
 
   # These are mine
   'nav',
