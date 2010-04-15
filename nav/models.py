@@ -7,6 +7,7 @@ from django.conf import settings
 from django.contrib.auth.models import Group
 from django.contrib.sites.models import Site
 from django.template import Template, Context
+from order.models import OrderedModel
 
 def upload_path(object, original):
   """Tells the FileField how to choose a name for this file."""
@@ -14,7 +15,7 @@ def upload_path(object, original):
   return os.path.join('menus', datetime.date.today().strftime('%Y/%m'), 
       size, original)
 
-class Item(models.Model):
+class Item(OrderedModel):
   """Describes a menu item in a website page"""
   
   login_choices = (
@@ -24,20 +25,6 @@ class Item(models.Model):
       ('A', _(u'Administrator')),
       ('S', _(u'Staff')),
       ('G', _(u'Belonging to a group')),
-      )
-
-  priority_choices = (
-      (0, _(u'0 (highest)')),
-      (1, '1'),
-      (2, '2'),
-      (3, '3'),
-      (4, '4'),
-      (5, _(u'5 (default)')),
-      (6, '6'),
-      (7, '7'),
-      (8, '8'),
-      (9, '9'),
-      (10, _(u'10 (lowest)')),
       )
 
   name = models.CharField(_('Name'), max_length=256, null=False, blank=False,
@@ -50,8 +37,6 @@ class Item(models.Model):
   parent = models.ForeignKey('self', null=True, blank=True, help_text=_('If you would like that this item comes under another one, select it here. Please note that the appearence of this item will then get conditioned to the appearence parent item as well.'))
 
   language = models.CharField(_('Language'), max_length=8, null=False, blank=False, help_text=_('Choose the language to which the name applies to.'), choices=settings.LANGUAGES, default=settings.LANGUAGE_CODE)
-
-  priority = models.PositiveIntegerField(_('Priority'), default=5, choices=priority_choices, blank=False, null=False, help_text=_(u'If you would like to move this item so it appears first, control it using this field. Lower numbers means a menu item has more priority and make it appear first. Menu items with the same priority are sorted alphabetically.'))
 
   image = models.ImageField(_('Image'), upload_to=upload_path, null=True, blank=True, help_text=_('If you would like this menu item to be represented by an image, upload it here.'), height_field='image_height', width_field='image_width')
 

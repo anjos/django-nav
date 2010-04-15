@@ -8,6 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext
 from django.utils.safestring import mark_safe
 from django.conf import settings
+from order.admin import OrderedModelAdmin
 import django.forms
 
 from models import * 
@@ -44,13 +45,13 @@ class ItemTranslationAdmin(admin.TabularInline):
 def translations(item):
   return item.itemtranslation_set.count()
 
-class ItemAdmin(admin.ModelAdmin):
+class ItemAdmin(OrderedModelAdmin):
   model = Item 
-  list_display = ('name', 'url', 'parent', 'description', 'language', 'priority', 'user', translations, )
+  list_display = ('name', 'url', 'parent', 'description', 'language', 'user', translations, 'move_up_down_links')
   fieldsets = (
       (None, 
         {
-          'fields': ('name', 'url', 'parent', 'description', 'language', 'priority', 'sites'),
+          'fields': ('name', 'url', 'parent', 'description', 'language', 'sites'),
         }
       ),
       (_(u'Images'),
@@ -66,8 +67,7 @@ class ItemAdmin(admin.ModelAdmin):
         }
       ),
     )
-  list_filter = ('language', 'priority',)
-  ordering = ('priority', 'name')
+  list_filter = ('language',)
   inlines = [ ItemTranslationAdmin, ]
 
 # make it admin'able

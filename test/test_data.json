@@ -12,7 +12,7 @@
       "sites": [
         1
       ], 
-      "priority": 0, 
+      "order": 0, 
       "image_height": 16, 
       "image_url": "http://andreanjos.org/media/favicon.ico", 
       "user": "X", 
@@ -33,7 +33,7 @@
       "sites": [
         1
       ], 
-      "priority": 5, 
+      "order": 1, 
       "image_height": 16, 
       "image_url": "http://www.google.com/favicon.ico", 
       "user": "X", 
@@ -52,7 +52,7 @@
       "image": "menus/2010/04/16x16/go-next.png", 
       "image_width": 16, 
       "sites": [], 
-      "priority": 10, 
+      "order": 2, 
       "image_height": 16, 
       "image_url": "", 
       "user": "N", 
@@ -73,7 +73,7 @@
       "sites": [
         1
       ], 
-      "priority": 10, 
+      "order": 3, 
       "image_height": 16, 
       "image_url": "", 
       "user": "L", 
@@ -94,7 +94,7 @@
       "sites": [
         1
       ], 
-      "priority": 5, 
+      "order": 4, 
       "image_height": null, 
       "image_url": "", 
       "user": "G", 
@@ -117,7 +117,7 @@
       "sites": [
         1
       ], 
-      "priority": 5, 
+      "order": 5, 
       "image_height": null, 
       "image_url": "", 
       "user": "S", 
