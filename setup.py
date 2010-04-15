@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 setup(
 
     name = "nav",
-    version = "0.3.1", 
+    version = "0.3.2", 
     packages = find_packages(),
 
     # we also need all translation files and templates
