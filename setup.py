@@ -10,7 +10,7 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name = "nav",
+    name = "django-nav",
     version = "0.3.2", 
     packages = find_packages(),
 
@@ -26,9 +26,10 @@ setup(
     zip_safe=False,
 
     install_requires = [
-      'Django>=1.1',
-      'docutils',
       'PIL',
+      'docutils',
+      
+      # mine
       'django-order',
       ],
 
